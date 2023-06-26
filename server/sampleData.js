@@ -76,4 +76,4 @@ const clients = [
   },
 ];
 
-module.exports = { projects, clients };
+export { projects, clients };

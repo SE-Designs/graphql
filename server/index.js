@@ -1,8 +1,9 @@
-require("dotenv").config();
+import "./loadEnv.js";
 
-const express = require("express");
+import express from "express";
 
-const { graphqlHTTP } = require("express-graphql");
+import { graphqlHTTP } from "express-graphql";
+import schema from "./schema/schema.js";
 
 const port = process.env.PORT || 3000;
 
