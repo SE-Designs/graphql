@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import { GET_PROJECT } from "../queries/projectQueries";
 import ClientInfo from "../components/ClientInfo";
+import Spinner from "../components/Spinner";
 
 function Project() {
   const { id } = useParams();
@@ -9,7 +10,7 @@ function Project() {
     variables: { id },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <p>Something went wrong</p>;
 
   return (
