@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { GET_PROJECT } from "../queries/projectQueries";
 import ClientInfo from "../components/ClientInfo";
 import Spinner from "../components/Spinner";
+import DeleteProject from "../components/DeleteProject";
+import UpdateProjectModal from "../components/UpdateProjectModal";
 
 function Project() {
   const { id } = useParams();
@@ -26,6 +28,8 @@ function Project() {
           <h5 className="mt-3">Project status</h5>
           <p className="lead">{data.project.status}</p>
           <ClientInfo client={data.project.client} />
+          <UpdateProjectModal project={data.project} />
+          <DeleteProject projectId={data.project.id} />
         </div>
       )}
     </>
